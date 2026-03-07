@@ -1,8 +1,10 @@
 # GTM Engineering Portfolio — Esther Elías
 
-Senior GTM professional turned GTM Engineer. I build AI agents, automation workflows, and data enrichment tools that make revenue teams faster and smarter.
+Sales Manager, Senior Account Executive, GTM Specialist — and now GTM Engineer. I build the AI agents that supercharge and multiply what my team and I can do.
 
 ## Projects
+
+---
 
 ### 1. ICP Qualification Agent
 AI-powered agent that evaluates companies against your Ideal Customer Profile and returns structured scores with outreach recommendations.
@@ -12,30 +14,46 @@ AI-powered agent that evaluates companies against your Ideal Customer Profile an
 - **Stack:** Python · Anthropic Claude API
 - **Value:** Qualify 50 accounts in the time it takes to manually research 5
 
-→ [View project](./icp-qualifier/)
+→ [View project](./icp-qualifier)
 
 ---
 
-### 2. Automated Outreach Personalizer *(coming soon)*
-Workflow that takes a list of target accounts and generates hyper-personalized outreach based on recent signals (news, job postings, tech stack).
+### 2. Lead Enrichment Agent
+Agent that connects to HubSpot CRM, reads contacts and companies, and automatically generates an ICP score with justification and next action for each lead.
 
-- **Stack:** Clay · Apollo API · Claude · HubSpot
+- **Input:** HubSpot CRM contacts and companies
+- **Output:** ICP Score + reason + concrete next action per lead
+- **Stack:** Python · HubSpot CRM API · Anthropic Claude API
+- **Value:** Enrich and prioritize an entire CRM in seconds, not hours
 
----
-
-### 3. GTM Intelligence Dashboard *(coming soon)*
-Tool that centralizes account data, generates executive summaries, and suggests next best actions for AEs.
-
-- **Stack:** Claude Code · APIs · Structured output
+→ [View project](./hubspot-integration)
 
 ---
 
-## About me
+### 3. GTM Intelligence Tool
+Multi-step agent that generates an executive GTM briefing for any target account. Fetches CRM data, searches real-time buying signals, and produces a structured briefing ready for the AE.
 
-10+ years in B2B sales and GTM: Sales Manager, Senior AE, Head of Growth, GTM Manager. I understand pipelines, ICP, sequences, forecasting, and revenue operations from the human and strategic side.
+- **Input:** Company domain (e.g. `typeform.com`)
+- **Output:** ICP fit score + buying signals + outreach angle + suggested opening line
+- **Stack:** Python · HubSpot CRM API · Anthropic Claude API · web search
+- **Value:** 45 minutes of manual account research done in 15 seconds
 
-Now I build the tools that make those processes 10x faster.
+→ [View project](./gtm-intelligence)
 
-**Stack:** Claude API · Python · n8n · HubSpot · Clay · Apollo
+---
 
-**Contact:** [LinkedIn](https://linkedin.com/in/esther-elias) · esther.eliasalonso@gmail.com
+## Stack
+
+| Tool | Usage |
+|---|---|
+| Python | Core scripting and agent logic |
+| Anthropic Claude API | LLM reasoning, scoring, briefing generation |
+| HubSpot CRM API | Contact and company data |
+| web search (Claude tool) | Real-time buying signals |
+| Git + GitHub | Version control and portfolio |
+
+## About
+
+Background in Sales Management, Account Executive, and GTM Strategy. Now I can also build the technical layer that makes GTM and Sales teams 10x more effective.
+
+→ [LinkedIn](https://linkedin.com/in/esther-elias) · [GitHub](https://github.com/esther-elialo)
