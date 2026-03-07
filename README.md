@@ -43,7 +43,7 @@ Multi-step agent that generates an executive GTM briefing for any target account
 ---
 
 ### 4. Pipeline Health Monitor
-AI agent that connects to HubSpot CRM, analyzes all active deals, and generates a weekly pipeline health report with prioritized actions for the Sales Manager.
+AI agent that connects to HubSpot CRM, analyzes all active deals, and generates a weekly pipeline health report with prioritized actions for the Sales Manager and or the Account Executive/SDR/BD.
 
 - **Input:** HubSpot CRM deals (automatic)
 - **Output:** Pipeline health report with 🔴 at-risk, 🟡 needs attention, 🟢 on track + top 3 priorities
