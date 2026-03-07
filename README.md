@@ -54,6 +54,18 @@ AI agent that connects to HubSpot CRM, analyzes all active deals, and generates 
 
 ---
 
+### 5. Meeting Prep Agent
+AI agent that generates a complete pre-meeting briefing for any prospect in seconds. Pulls CRM data, searches real-time signals, and produces a structured brief ready to read 5 minutes before the call.
+
+- **Input:** Prospect name + company (e.g. `python3 meeting_prep.py "Maria Garcia" "Factorial HR"`)
+- **Output:** Who you're meeting · Company snapshot · Buying signals · Likely objections · Talk track · Meeting objective
+- **Stack:** Python · HubSpot CRM API · Anthropic Claude API · web search
+- **Value:** Replaces 30 minutes of manual research before every discovery call
+
+→ [View project](./meeting-prep)
+
+---
+
 ## Stack
 
 | Tool | Usage |
