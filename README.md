@@ -42,6 +42,18 @@ Multi-step agent that generates an executive GTM briefing for any target account
 
 ---
 
+### 4. Pipeline Health Monitor
+AI agent that connects to HubSpot CRM, analyzes all active deals, and generates a weekly pipeline health report with prioritized actions for the Sales Manager.
+
+- **Input:** HubSpot CRM deals (automatic)
+- **Output:** Pipeline health report with 🔴 at-risk, 🟡 needs attention, 🟢 on track + top 3 priorities
+- **Stack:** Python · HubSpot CRM API · Anthropic Claude API
+- **Value:** 30 minutes of manual pipeline review done in 15 seconds, every Monday morning
+
+→ [View project](./pipeline-monitor)
+
+---
+
 ## Stack
 
 | Tool | Usage |
@@ -49,7 +61,7 @@ Multi-step agent that generates an executive GTM briefing for any target account
 | Python | Core scripting and agent logic |
 | Anthropic Claude API | LLM reasoning, scoring, briefing generation |
 | HubSpot CRM API | Contact and company data |
-| web search (Claude tool) | Real-time buying signals |
+| web Auúnsearch (Claude tool) | Real-time buying signals |
 | Git + GitHub | Version control and portfolio |
 
 ## About
