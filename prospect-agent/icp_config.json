@@ -1,0 +1,22 @@
+{
+  "description": "B2B SaaS companies looking to scale their sales team",
+  "industries": ["computer software", "information technology", "saas", "hr software", "martech"],
+  "company_size_min": 50,
+  "company_size_max": 500,
+  "target_titles": ["VP of Sales", "Head of Sales", "Sales Director", "CRO", "Chief Revenue Officer", "Head of Growth", "VP Growth", "Sales Manager", "Chief Sales Officer"],
+  "locations": ["Spain", "France", "Germany", "United Kingdom"],
+  "buying_signals_keywords": ["hiring sales", "series a", "series b", "expansion", "new market", "growth"],
+  "daily_prospects_target": 30,
+  "target_domains": [
+    "factorial.hr",
+    "personio.com",
+    "hibob.com",
+    "kenjo.io",
+    "workable.com",
+    "recruitee.com",
+    "coverflex.com",
+    "pleo.io",
+    "spendesk.com",
+    "getmoss.com"
+  ]
+}
