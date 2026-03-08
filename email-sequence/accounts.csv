@@ -1,0 +1,6 @@
+first_name,last_name,title,company,domain,industry,employees,linkedin_url,email
+Maria,Garcia,VP of Sales,Factorial HR,factorialhr.com,HR Software,200,linkedin.com/in/mariagarcia,maria@factorialhr.com
+Carlos,Rodriguez,Head of Growth,Typeform,typeform.com,SaaS,400,linkedin.com/in/carlosrodriguez,carlos@typeform.com
+Ana,Martinez,Sales Director,Lemon Learning,lemonlearning.com,EdTech,80,linkedin.com/in/anamartinez,ana@lemonlearning.com
+David,Lopez,Chief Revenue Officer,Acme Corp,acmecorp.com,B2B SaaS,150,linkedin.com/in/davidlopez,david@acmecorp.com
+Sofia,Fernandez,VP Marketing,TechStartup SL,techstartupsl.com,MarTech,90,linkedin.com/in/sofiafernandez,sofia@techstartupsl.com
