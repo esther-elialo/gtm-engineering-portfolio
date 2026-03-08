@@ -78,6 +78,18 @@ AI agent that takes a list of target accounts and generates a personalized 5-ema
 
 ---
 
+### 7. Daily Prospect Agent
+AI agent that runs every morning, scores prospects against your ICP, searches for real-time buying signals, and automatically populates the first stage of your HubSpot pipeline — ready for outreach.
+
+- **Input:** Apollo/Clay CSV export + ICP config (JSON)
+- **Output:** Contacts + deals created in HubSpot pipeline with ICP score, buying signal, outreach angle and opening line per prospect
+- **Stack:** Python · Apollo API · Clay (waterfall enrichment) · Anthropic Claude Haiku 4.5 · HubSpot CRM API
+- **Value:** Wakes up before you do. New qualified prospects in your pipeline every morning without manual research
+
+→ [View project](./prospect-agent)
+
+---
+
 ## Stack
 
 | Tool | Usage |
