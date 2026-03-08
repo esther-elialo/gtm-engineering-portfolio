@@ -66,6 +66,18 @@ AI agent that generates a complete pre-meeting briefing for any prospect in seco
 
 ---
 
+### 6. Sales Email Sequence Generator
+AI agent that takes a list of target accounts and generates a personalized 5-email outreach sequence for each contact, based on real-time company signals and enriched contact data.
+
+- **Input:** CSV of target accounts (Apollo export or Clay export)
+- **Output:** 5-email sequence per contact — pattern interrupt, insight, social proof, pain point, breakup
+- **Stack:** Python · Apollo API · Clay (waterfall enrichment) · Anthropic Claude Opus 4.6 · Anthropic Claude Haiku 4.5
+- **Value:** Replaces hours of manual research and copywriting — personalized sequences at scale in minutes
+
+→ [View project](./email-sequence)
+
+---
+
 ## Stack
 
 | Tool | Usage |
