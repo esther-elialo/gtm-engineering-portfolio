@@ -110,7 +110,9 @@ Real-time lead scoring automation built in n8n. When a new contact enters HubSpo
 | Python | Core scripting and agent logic |
 | Anthropic Claude API | LLM reasoning, scoring, briefing generation |
 | HubSpot CRM API | Contact and company data |
-| web Auúnsearch (Claude tool) | Real-time buying signals |
+| web search (Claude tool) | Real-time buying signals |
+| n8n Cloud | Workflow automation and routing |
+| Google Sheets | Lead discard log |
 | Git + GitHub | Version control and portfolio |
 
 ## About
