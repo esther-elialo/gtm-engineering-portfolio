@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esther Elías Alonso — Sales Manager · AI & GTM Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --bg2: #f5f5f7;
+      --bg3: #fbfbfd;
+      --text: #1d1d1f;
+      --text2: #6e6e73;
+      --text3: #86868b;
+      --accent: #0071e3;
+      --accent-h: #0077ed;
+      --border: rgba(0,0,0,0.08);
+      --border2: rgba(0,0,0,0.12);
+      --radius: 18px;
+      --radius-sm: 12px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 52px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 44px;
+    }
+    .nav-logo { font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a { font-size: 13px; color: var(--text2); text-decoration: none; transition: color 0.2s; letter-spacing: -0.01em; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { font-size: 13px; background: var(--accent); color: #fff; padding: 7px 16px; border-radius: 980px; text-decoration: none; font-weight: 400; transition: background 0.2s; letter-spacing: -0.01em; }
+    .nav-cta:hover { background: var(--accent-h); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 52px 24px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,113,227,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,113,227,0.04) 0%, transparent 60%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 860px; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--accent); font-weight: 500;
+      letter-spacing: -0.01em; margin-bottom: 24px;
+      background: rgba(0,113,227,0.08); padding: 6px 14px; border-radius: 980px;
+      opacity: 0; animation: fadeIn 0.8s 0.1s forwards;
+    }
+    .hero-eyebrow::before { content:''; width:6px; height:6px; background:var(--accent); border-radius:50%; animation: pulse 2s infinite; }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .hero-title {
+      font-size: clamp(44px, 6.5vw, 82px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.9s 0.2s forwards;
+    }
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #0071e3 0%, #5e5ce6 50%, #bf5af2 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(17px, 2.5vw, 21px);
+      color: var(--text2);
+      line-height: 1.5;
+      font-weight: 300;
+      max-width: 620px;
+      margin: 0 auto 40px;
+      letter-spacing: -0.02em;
+      opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
+    }
+    .hero-subtitle strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 80px;
+      opacity: 0; animation: fadeUp 0.9s 0.5s forwards;
+    }
+    .btn-apple-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 14px 26px; background: var(--accent); color: #fff;
+      border-radius: 980px; font-size: 15px; font-weight: 400;
+      text-decoration: none; letter-spacing: -0.02em;
+      transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,113,227,0.3);
+    }
+    .btn-apple-primary:hover { background: var(--accent-h); transform: scale(1.02); box-shadow: 0 4px 16px rgba(0,113,227,0.4); }
+    .btn-apple-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 14px 26px; background: var(--bg2); color: var(--text);
+      border-radius: 980px; font-size: 15px; font-weight: 400;
+      text-decoration: none; letter-spacing: -0.02em;
+      transition: all 0.2s;
+    }
+    .btn-apple-secondary:hover { background: #e8e8ed; transform: scale(1.02); }
+
+    /* STATS STRIP */
+    .stats-strip {
+      opacity: 0; animation: fadeUp 0.9s 0.65s forwards;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; max-width: 640px; margin: 0 auto;
+    }
+    .stat-cell {
+      background: var(--bg3); padding: 28px 24px; text-align: center;
+    }
+    .stat-big {
+      font-size: 44px; font-weight: 600; letter-spacing: -0.04em;
+      color: var(--text); line-height: 1;
+      background: linear-gradient(135deg, #0071e3, #5e5ce6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-caption { font-size: 13px; color: var(--text3); margin-top: 6px; letter-spacing: -0.01em; }
+
+    /* SCROLL INDICATOR */
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--text3); font-size: 11px; letter-spacing: 0.05em;
+      animation: fadeIn 1s 1.2s forwards; opacity: 0;
+    }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--border2), transparent); animation: scrollDown 2s 1.5s infinite; }
+    @keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    /* SECTIONS */
+    .section-wrap { padding: 120px 24px; }
+    .section-wrap.alt { background: var(--bg2); }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+
+    .section-eyebrow { font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: -0.01em; margin-bottom: 12px; }
+    .section-heading { font-size: clamp(32px, 4vw, 52px); font-weight: 600; letter-spacing: -0.04em; color: var(--text); margin-bottom: 16px; line-height: 1.1; }
+    .section-sub { font-size: 17px; color: var(--text2); max-width: 480px; line-height: 1.6; margin-bottom: 64px; font-weight: 300; letter-spacing: -0.02em; }
+
+    /* PROJECTS */
+    .projects-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .proj-row {
+      background: var(--bg3); padding: 32px 36px;
+      display: grid; grid-template-columns: 48px 1fr auto;
+      gap: 24px; align-items: center;
+      transition: background 0.2s;
+      opacity: 0; transform: translateY(12px);
+    }
+    .proj-row.visible { opacity: 1; transform: translateY(0); transition: opacity 0.5s, transform 0.5s, background 0.2s; }
+    .proj-row:hover { background: #f0f0f5; }
+    .proj-index { font-size: 12px; color: var(--text3); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .proj-content {}
+    .proj-name { font-size: 17px; font-weight: 600; color: var(--text); letter-spacing: -0.03em; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .proj-tagline { font-size: 14px; color: var(--accent); font-weight: 400; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .apple-tag { font-size: 11px; padding: 3px 10px; background: rgba(0,0,0,0.06); color: var(--text2); border-radius: 980px; letter-spacing: -0.01em; }
+    .proj-arrow { color: var(--accent); text-decoration: none; font-size: 20px; opacity: 0.6; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0; }
+    .proj-row:hover .proj-arrow { opacity: 1; transform: translateX(3px); }
+    .new-pill { font-size: 10px; background: var(--accent); color: #fff; padding: 2px 8px; border-radius: 980px; font-weight: 500; letter-spacing: 0; }
+
+    @media(max-width: 600px) { .proj-row { grid-template-columns: 1fr; } .proj-index { display: none; } }
+
+    /* STACK */
+    .stack-pills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .stack-pill {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 20px; background: var(--bg3);
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 14px; color: var(--text2); font-weight: 400;
+      letter-spacing: -0.01em; transition: all 0.2s;
+    }
+    .stack-pill:hover { background: #fff; border-color: var(--accent); color: var(--text); box-shadow: 0 2px 12px rgba(0,113,227,0.1); }
+    .stack-pill-icon { font-size: 18px; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    @media(max-width:768px){ .about-grid{grid-template-columns:1fr;} }
+    .about-body p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 18px; letter-spacing: -0.01em; font-weight: 300; }
+    .about-body p strong { color: var(--text); font-weight: 500; }
+    .now-card { margin-top: 28px; padding: 20px 24px; background: rgba(0,113,227,0.06); border-radius: var(--radius-sm); border: 1px solid rgba(0,113,227,0.12); }
+    .now-eyebrow { font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .now-copy { font-size: 14px; color: var(--text2); line-height: 1.7; font-weight: 300; letter-spacing: -0.01em; }
+    .now-copy strong { color: var(--text); font-weight: 500; }
+
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-row { display: grid; grid-template-columns: 100px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .exp-year { font-size: 11px; color: var(--text3); letter-spacing: -0.01em; padding-top: 2px; line-height: 1.5; }
+    .exp-role { font-size: 14px; font-weight: 500; color: var(--text); letter-spacing: -0.02em; margin-bottom: 2px; }
+    .exp-co { font-size: 13px; color: var(--text3); letter-spacing: -0.01em; font-weight: 300; }
+
+    /* CONTACT */
+    .contact-section { background: var(--text); color: #fff; padding: 120px 24px; text-align: center; }
+    .contact-title { font-size: clamp(40px, 6vw, 72px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 20px; }
+    .contact-title .grad { background: linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6); -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+    .contact-sub { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 48px; font-weight: 300; letter-spacing: -0.02em; }
+    .contact-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .btn-white { display: inline-flex; align-items: center; gap: 6px; padding: 14px 26px; background: #fff; color: var(--text); border-radius: 980px; font-size: 15px; font-weight: 500; text-decoration: none; letter-spacing: -0.02em; transition: all 0.2s; }
+    .btn-white:hover { background: #f0f0f5; transform: scale(1.02); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; padding: 14px 26px; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); border-radius: 980px; font-size: 15px; font-weight: 400; text-decoration: none; letter-spacing: -0.02em; transition: all 0.2s; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; transform: scale(1.02); }
+
+    footer { background: var(--bg2); padding: 24px 44px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); }
+    .footer-copy { font-size: 12px; color: var(--text3); letter-spacing: -0.01em; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+    /* CV MODAL */
+    .cv-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .cv-modal-overlay.open { display: flex; animation: fadeIn 0.25s forwards; }
+    .cv-modal {
+      background: #fff; border-radius: var(--radius); width: 100%; max-width: 860px;
+      max-height: 90vh; overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+      animation: slideUp 0.3s forwards;
+      display: flex; flex-direction: column;
+    }
+    @keyframes slideUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+    .cv-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 28px; border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .cv-modal-title { font-size: 16px; font-weight: 600; letter-spacing: -0.03em; color: var(--text); }
+    .cv-modal-meta { font-size: 13px; color: var(--text3); }
+    .cv-modal-close {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--bg2);
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--text2); transition: background 0.2s;
+    }
+    .cv-modal-close:hover { background: #e8e8ed; }
+    .cv-modal-body { overflow-y: auto; padding: 36px 40px; flex: 1; }
+
+    /* CV Content styles */
+    .cv-section { margin-bottom: 36px; }
+    .cv-section-title {
+      font-size: 13px; font-weight: 600; color: var(--accent);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .cv-name-block { text-align: center; margin-bottom: 32px; padding-bottom: 28px; border-bottom: 2px solid var(--accent); }
+    .cv-name { font-size: 36px; font-weight: 700; letter-spacing: -0.04em; color: var(--text); margin-bottom: 4px; }
+    .cv-title-line { font-size: 14px; color: var(--text2); font-weight: 400; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .cv-contact-line { font-size: 12px; color: var(--text3); }
+    .cv-contact-line a { color: var(--accent); text-decoration: none; }
+
+    .cv-about { font-size: 13px; color: var(--text2); line-height: 1.75; font-weight: 300; }
+
+    .cv-competencies { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+    .cv-comp-item { font-size: 12px; color: var(--text2); padding: 4px 0; border-bottom: 1px solid var(--bg2); display: flex; align-items: center; gap: 6px; }
+    .cv-comp-item::before { content:'·'; color: var(--accent); font-weight: 700; }
+
+    .cv-job { margin-bottom: 28px; }
+    .cv-job-header { margin-bottom: 10px; }
+    .cv-company { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+    .cv-role { font-size: 13px; font-weight: 600; color: var(--text); }
+    .cv-date { font-size: 11px; color: var(--text3); font-style: italic; margin-top: 2px; }
+    .cv-desc { font-size: 12px; color: var(--text2); line-height: 1.7; font-weight: 300; margin-bottom: 10px; }
+    .cv-bullets { list-style: none; padding: 0; }
+    .cv-bullets li { font-size: 12px; color: var(--text2); line-height: 1.7; padding: 2px 0 2px 16px; position: relative; font-weight: 300; }
+    .cv-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 4px; }
+    .cv-achievements { margin-top: 12px; }
+    .cv-ach-title { font-size: 11px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+
+    .cv-edu-item { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--bg2); }
+    .cv-edu-year { font-size: 11px; color: var(--text3); }
+    .cv-edu-degree { font-size: 13px; font-weight: 500; color: var(--text); }
+    .cv-edu-school { font-size: 12px; color: var(--text3); font-weight: 300; }
+
+    .cv-tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .cv-tool-row { font-size: 12px; color: var(--text2); }
+    .cv-tool-row strong { color: var(--text); font-weight: 500; }
+
+    .cv-awards { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cv-award-pill { font-size: 11px; padding: 4px 12px; background: var(--bg2); border-radius: 980px; color: var(--text2); }
+
+    .cv-langs { display: flex; gap: 24px; }
+    .cv-lang { font-size: 13px; color: var(--text2); }
+    .cv-lang strong { color: var(--text); font-weight: 500; }
+
+    .cv-modal-footer {
+      padding: 16px 28px; border-top: 1px solid var(--border);
+      display: flex; justify-content: flex-end; gap: 10px; flex-shrink: 0;
+      background: var(--bg3);
+    }
+    .cv-dl-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; background: var(--accent); color: #fff;
+      border-radius: 980px; font-size: 13px; text-decoration: none;
+      transition: background 0.2s; font-weight: 400;
+    }
+    .cv-dl-btn:hover { background: var(--accent-h); }
+    ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#f5f5f7} ::-webkit-scrollbar-thumb{background:#c7c7cc;border-radius:3px}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" style="font-size:19px;font-weight:700;letter-spacing:-0.04em;">Esther Elías</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#stack">Stack</a>
+    <a href="#about">About</a>
+    <a href="#" onclick="openCV(event)">CV</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Sales Manager · AI & GTM Specialist · Open to new opportunities</div>
+    <h1 class="hero-title">
+      I lead sales teams &amp;<br>
+      <span class="gradient-text">I build the AI that makes them unstoppable.</span>
+    </h1>
+    <p class="hero-subtitle">
+      <strong>Sales Manager · Partnerships Manager · GTM Specialist</strong> — with the technical skills to build the AI systems that empower sales teams and make them 10x faster.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-apple-primary">
+        Explore projects
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://github.com/esther-elialo/gtm-engineering-portfolio" target="_blank" class="btn-apple-secondary">
+        View on GitHub
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/estherelias" target="_blank" class="btn-apple-secondary">LinkedIn</a>
+    </div>
+    <div class="stats-strip">
+      <div class="stat-cell">
+        <div class="stat-big" data-count="8">0</div>
+        <div class="stat-caption">Projects built</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-big" data-count="8">0</div>
+        <div class="stat-caption">APIs integrated</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-big" data-count="500" data-prefix="+" data-suffix="h">0</div>
+        <div class="stat-caption">Manual hours saved</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section-wrap" id="projects">
+  <div class="section-inner">
+    <div class="section-eyebrow">Projects</div>
+    <h2 class="section-heading">8 tools. Real GTM problems.</h2>
+    <p class="section-sub">Each project solves a specific friction point in the sales process — built from 12 years of experiencing those problems firsthand.</p>
+
+    <div class="projects-list">
+
+      <div class="proj-row">
+        <div class="proj-index">01</div>
+        <div class="proj-content">
+          <div class="proj-name">ICP Qualification Agent</div>
+          <div class="proj-tagline">Qualify 50 accounts in the time it takes to research 5 manually</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">Claude API</span><span class="apple-tag">CSV</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/icp-qualifier" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">02</div>
+        <div class="proj-content">
+          <div class="proj-name">Lead Enrichment Agent</div>
+          <div class="proj-tagline">Enrich and prioritize an entire CRM in seconds, not hours</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Claude API</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/hubspot-integration" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">03</div>
+        <div class="proj-content">
+          <div class="proj-name">GTM Intelligence Tool</div>
+          <div class="proj-tagline">45 minutes of manual account research done in 15 seconds</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Web Search</span><span class="apple-tag">Claude Opus</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/gtm-intelligence" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">04</div>
+        <div class="proj-content">
+          <div class="proj-name">Pipeline Health Monitor</div>
+          <div class="proj-tagline">30 minutes of pipeline review done in 15 seconds, every Monday</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Claude Haiku</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/pipeline-monitor" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">05</div>
+        <div class="proj-content">
+          <div class="proj-name">Meeting Prep Agent</div>
+          <div class="proj-tagline">Replaces 30 minutes of manual research before every discovery call</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Web Search</span><span class="apple-tag">Claude Opus</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/meeting-prep" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">06</div>
+        <div class="proj-content">
+          <div class="proj-name">Email Sequence Generator</div>
+          <div class="proj-tagline">Personalized sequences at scale in minutes, not days</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">Apollo API</span><span class="apple-tag">Clay</span><span class="apple-tag">Claude API</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/email-sequence" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">07</div>
+        <div class="proj-content">
+          <div class="proj-name">Daily Prospect Agent</div>
+          <div class="proj-tagline">New qualified prospects in your pipeline every morning, zero manual work</div>
+          <div class="proj-tags"><span class="apple-tag">Python</span><span class="apple-tag">Apollo API</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Claude Haiku</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/prospect-agent" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+      <div class="proj-row">
+        <div class="proj-index">08</div>
+        <div class="proj-content">
+          <div class="proj-name">Lead Scoring Pipeline <span class="new-pill">New</span></div>
+          <div class="proj-tagline">Every lead scored, routed and logged automatically — 24/7</div>
+          <div class="proj-tags"><span class="apple-tag">n8n Cloud</span><span class="apple-tag">Webhooks</span><span class="apple-tag">HubSpot API</span><span class="apple-tag">Google Sheets</span></div>
+        </div>
+        <a href="https://github.com/esther-elialo/gtm-engineering-portfolio/tree/main/lead-scoring-pipeline" target="_blank" class="proj-arrow">→</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section class="section-wrap alt" id="stack">
+  <div class="section-inner">
+    <div class="section-eyebrow">Stack</div>
+    <h2 class="section-heading">Tools I build with.</h2>
+    <p class="section-sub">From API calls to no-code automation — the full toolkit for building AI-powered GTM systems.</p>
+    <div class="stack-pills">
+      <div class="stack-pill"><span class="stack-pill-icon">🐍</span> Python</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🤖</span> Claude API</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🔶</span> HubSpot API</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🌿</span> Apollo API</div>
+      <div class="stack-pill"><span class="stack-pill-icon">⚡</span> n8n Cloud</div>
+      <div class="stack-pill"><span class="stack-pill-icon">📊</span> Google Sheets API</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🔍</span> Web Search API</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🐙</span> Git + GitHub</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🧱</span> Clay</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🪝</span> Webhooks</div>
+      <div class="stack-pill"><span class="stack-pill-icon">🔗</span> REST APIs</div>
+      <div class="stack-pill"><span class="stack-pill-icon">📡</span> LinkedIn Sales Nav</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-wrap" id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow">Background</div>
+    <h2 class="section-heading">Who I am.</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I spent <strong>12+ years in B2B SaaS sales</strong> — as an Account Executive, Sales Manager, Head of Growth, and GTM Specialist. I know what it feels like to spend 3 hours researching one account before a call, to manually triage 200 inbound leads, to build pipeline from scratch without the right tools.</p>
+        <p>Now I build the systems that <strong>eliminate that friction</strong>. AI agents that do the research, scoring, enrichment, and sequencing — so sales teams can focus on what humans do best: building relationships and closing.</p>
+        <p>I'm not an engineer by training. I'm a <strong>sales professional who learned to build</strong>. That's the combination that makes a GTM Engineer actually useful — understanding both the revenue problem and the technical solution.</p>
+        <div class="now-card">
+          <div class="now-eyebrow">Now looking for</div>
+          <div class="now-copy">My next professional challenge as a <strong>Sales Manager · Partnerships Manager · GTM Specialist</strong>, where I can empower, supercharge and multiply what my team and I can do — related to Sales, Partnerships, Revenue and Growth.</div>
+        </div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-row">
+          <div class="exp-year">Now</div>
+          <div><div class="exp-role">Sales Manager · Partnerships · GTM Specialist</div><div class="exp-co">Looking for my next challenge, empowering teams with AI</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-year">2020–2026</div>
+          <div><div class="exp-role">Founder · Sales Manager · Head of Growth</div><div class="exp-co">EdTech / SaaS</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-year">2015–2022</div>
+          <div><div class="exp-role">Sales Manager</div><div class="exp-co">HR Consulting</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-year">2013–2015</div>
+          <div><div class="exp-role">Account Executive</div><div class="exp-co">HR Consulting</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-year">2011–2013</div>
+          <div><div class="exp-role">Talent Acquisition Specialist</div><div class="exp-co">HR Consulting</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <h2 class="contact-title">Ready to build<br><span class="grad">something great?</span></h2>
+  <p class="contact-sub">Let's talk about how AI can accelerate your revenue team.</p>
+  <div class="contact-btns">
+    <a href="https://linkedin.com/in/estherelias" target="_blank" class="btn-white">Connect on LinkedIn</a>
+    <a href="https://github.com/esther-elialo" target="_blank" class="btn-ghost">View GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2026 Esther Elías Alonso</div>
+  <div class="footer-copy">Sales Manager · AI & GTM Specialist · Built with Python + Claude API</div>
+</footer>
+
+<!-- CV MODAL -->
+<div class="cv-modal-overlay" id="cvModal" onclick="closeCVOnOverlay(event)">
+  <div class="cv-modal">
+    <div class="cv-modal-header">
+      <div>
+        <div class="cv-modal-title">Esther Elías Alonso — Curriculum Vitae</div>
+        <div class="cv-modal-meta">Sales Manager · AI & GTM Specialist · Madrid, Spain</div>
+      </div>
+      <button class="cv-modal-close" onclick="closeCV()">×</button>
+    </div>
+    <div class="cv-modal-body">
+
+      <!-- NAME BLOCK -->
+      <div class="cv-name-block">
+        <div class="cv-name">ESTHER ELÍAS ALONSO</div>
+        <div class="cv-title-line">Sales Manager | AI &amp; GTM Engineer | Growth Specialist</div>
+        <div class="cv-contact-line">+34 636 633 251 · esther.eliasalonso@gmail.com · Madrid (Spain) · <a href="https://www.linkedin.com/in/esthereliasalonso/" target="_blank">LinkedIn</a> · <a href="https://github.com/esther-elialo" target="_blank">GitHub</a></div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="cv-section">
+        <div class="cv-section-title">About me</div>
+        <p class="cv-about">Outbound-focused sales leader with 12+ years building and scaling B2B revenue engines across SaaS, HR and tech-driven environments. Proven track record closing enterprise deals, leading high-performance teams, and designing outbound systems from scratch that convert into predictable, recurring pipeline.</p>
+        <br>
+        <p class="cv-about">What sets me apart: I don't just run the playbook, I can build it, and increasingly, I automate it. Over the past year I've developed hands-on technical skills in AI and GTM engineering, building production-ready tools that eliminate manual friction across the sales process: lead enrichment agents, ICP qualification systems, pipeline health monitors, and AI-powered outreach workflows, all integrated with HubSpot, Apollo, Claude API and n8n.</p>
+        <br>
+        <p class="cv-about">The result is a sales leader who understands both sides of the equation: the revenue problem and the technical solution. I bring strategic thinking, executional rigor, and the ability to multiply what a sales team can do.</p>
+        <br>
+        <p class="cv-about">Currently looking for my next challenge as Sales Manager, Partnerships Manager, or GTM Specialist in a scale-up or tech company where AI is part of how the team operates.</p>
+      </div>
+
+      <!-- COMPETENCIES -->
+      <div class="cv-section">
+        <div class="cv-section-title">Core Competencies</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px 24px;">
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Sales Leadership &amp; Revenue</div>
+            <div class="cv-competencies" style="grid-template-columns:1fr;">
+              <div class="cv-comp-item">Enterprise B2B Sales &amp; Complex Deal Closing</div>
+              <div class="cv-comp-item">SDR/AE Team Leadership &amp; Coaching</div>
+              <div class="cv-comp-item">Pipeline Management, Forecasting &amp; CRM Optimization</div>
+              <div class="cv-comp-item">Sales Methodology Adoption (MEDDIC / MEDDPICC / BANT)</div>
+              <div class="cv-comp-item">Multi-Channel Outbound Strategy &amp; Sequencing</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">Partnerships &amp; Growth</div>
+            <div class="cv-competencies" style="grid-template-columns:1fr;">
+              <div class="cv-comp-item">Strategic Partnerships &amp; BD</div>
+              <div class="cv-comp-item">C-Level Negotiation &amp; Stakeholder Management</div>
+              <div class="cv-comp-item">ICP Definition, Segmentation &amp; Account Scoring</div>
+              <div class="cv-comp-item">Cross-functional Collaboration (Product, Marketing, RevOps)</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:10px;">AI &amp; GTM Engineering</div>
+            <div class="cv-competencies" style="grid-template-columns:1fr;">
+              <div class="cv-comp-item">AI Agent Design &amp; Automation (Python, Claude API, n8n)</div>
+              <div class="cv-comp-item">CRM Integration &amp; API Workflows (HubSpot, Apollo)</div>
+              <div class="cv-comp-item">Lead Enrichment &amp; Scoring Systems</div>
+              <div class="cv-comp-item">Prompt Engineering &amp; AI-Powered Outreach</div>
+            </div>
+            <div style="margin-top:14px;font-size:11px;color:var(--accent);font-weight:500;">Portfolio: <a href="https://esther-elialo.github.io/gtm-engineering-portfolio" target="_blank" style="color:var(--accent);">web</a> · <a href="https://github.com/esther-elialo/gtm-engineering-portfolio" target="_blank" style="color:var(--accent);">GitHub</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="cv-section">
+        <div class="cv-section-title">Professional Experience</div>
+
+        <div class="cv-job">
+          <div class="cv-job-header">
+            <div class="cv-company">FUNTECH ROCKET | EdTech SaaS Startup</div>
+            <div class="cv-role">Founder · Sales &amp; Partnerships Manager · GTM Specialist</div>
+            <div class="cv-date">2020 – Mar 2026 | Remote</div>
+          </div>
+          <p class="cv-desc">EdTech platform enabling children (6–14 years old) to learn programming autonomously through gamified learning, used by families, schools, and enterprises.</p>
+          <ul class="cv-bullets">
+            <li>Designed and executed full outbound GTM strategy: ICP definition, segmentation, account scoring, and multi-channel outreach, scaling a B2B SaaS company from zero to profitability in 4 years.</li>
+            <li>Built and managed the full sales cycle end-to-end: lead generation, discovery, proposal, negotiation, closing, onboarding, and account expansion.</li>
+            <li>Closed enterprise deals with SAP, Volkswagen, BMW, Accenture, and Fujitsu, among others.</li>
+            <li>Owned revenue targets, pipeline forecasting, and deal strategy, running rigorous reviews and M-QBRs to ensure consistent, predictable growth.</li>
+            <li>Analyzed sales performance data and optimized processes to improve conversion rates, deal cycles, and revenue. Led and coached the Sales Team.</li>
+            <li>Drove structured sales methodology adoption (qualification frameworks like MEDDICC, next steps, multi-stakeholder inspection) to sharpen execution from discovery to close.</li>
+            <li>Introduced AI-powered tools into the sales workflow — automating lead enrichment, account research, and outreach personalization using Claude API and HubSpot integrations, reducing manual work and accelerating pipeline execution.</li>
+            <li>Positioned the product as a corporate benefit solution to HR Departments, embedding it into employee engagement and talent programs.</li>
+            <li>Negotiated multi-year agreements and strategic partnerships, aligning commercial terms with long-term growth objectives.</li>
+            <li>Raised private and public funding (FFF investors + ENISA loan), strengthening financial runway and commercial scalability.</li>
+            <li>Built and led cross-functional teams (15–20 people) collaborating closely with product and marketing to increase conversion and retention.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-header">
+            <div class="cv-company">360 TALENT | HR &amp; Recruitment Consultancy</div>
+            <div class="cv-role">Head of Startups &amp; Tech Companies / Sales Manager</div>
+            <div class="cv-date">Jun 2015 – Aug 2023 | Madrid / Remote</div>
+          </div>
+          <ul class="cv-bullets">
+            <li>Built, led and coached teams of 4–12 Account Executives, improving win rates, deal size, and overall sales performance across complex B2B cycles.</li>
+            <li>Owned revenue targets, pipeline forecasting, and deal strategy, running rigorous reviews and M-QBRs to ensure consistent, predictable growth.</li>
+            <li>Drove structured sales methodology adoption (MEDDICC, next steps, multi-stakeholder inspection) to sharpen execution from discovery to close.</li>
+            <li>Built a value-led selling culture focused on multi-threaded engagements with economic buyers, champions, and technical evaluators at all levels.</li>
+            <li>Segmented and prioritized account portfolios to uncover expansion and upsell plays, while scaling team structure and establishing strong operating rhythms.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-header">
+            <div class="cv-company">360 TALENT</div>
+            <div class="cv-role">Strategic Enterprise Account Manager</div>
+            <div class="cv-date">Mar 2014 – Jun 2015 | Madrid</div>
+          </div>
+          <ul class="cv-bullets">
+            <li>Prospected and closed new B2B clients through cold outreach and relationship-driven sales.</li>
+            <li>Expanded existing accounts within the tech, digital, and startup ecosystem.</li>
+            <li>Designed and launched a recruitment service for startups, contributing directly to new revenue streams.</li>
+            <li>Conducted market research and executed sales plans aligned with business growth objectives.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-header">
+            <div class="cv-company">360 TALENT</div>
+            <div class="cv-role">Headhunter</div>
+            <div class="cv-date">Sep 2013 – Mar 2014</div>
+          </div>
+          <ul class="cv-bullets">
+            <li>Delivered end-to-end recruitment services across IT, Marketing, Sales, Finance, and Operations.</li>
+            <li>Built strong client relationships through consultative selling and high-quality delivery.</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-header">
+            <div class="cv-company">PSICOTEC | HR &amp; Recruitment Consultancy</div>
+            <div class="cv-role">Talent Acquisition Intern</div>
+            <div class="cv-date">Jul 2012 – Jul 2013 | Madrid</div>
+          </div>
+          <ul class="cv-bullets">
+            <li>Supported recruitment processes and client engagement across multiple business areas.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="cv-section">
+        <div class="cv-section-title">Education</div>
+        <div class="cv-edu-item">
+          <div class="cv-edu-year">2025–now</div>
+          <div><div class="cv-edu-degree">Innovation &amp; AI Master</div><div class="cv-edu-school">Founderz (Spain)</div></div>
+        </div>
+        <div class="cv-edu-item">
+          <div class="cv-edu-year">2020–2021</div>
+          <div><div class="cv-edu-degree">Executive MBA</div><div class="cv-edu-school">Quantic School of Business and Technology (Washington – USA)</div></div>
+        </div>
+        <div class="cv-edu-item">
+          <div class="cv-edu-year">2008–2013</div>
+          <div><div class="cv-edu-degree">Degree in Psychology – Human Resources Specialist</div><div class="cv-edu-school">Complutense University (Madrid – Spain)</div></div>
+        </div>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="cv-section">
+        <div class="cv-section-title">Tools &amp; Technologies</div>
+        <div class="cv-tools-grid">
+          <div class="cv-tool-row"><strong>Sales &amp; CRM:</strong> HubSpot, Pipedrive, Brevo, ActiveCampaign, Apollo, Clay</div>
+          <div class="cv-tool-row"><strong>Automation &amp; Productivity:</strong> n8n, Make, Notion, Slack, Trello</div>
+          <div class="cv-tool-row"><strong>Marketing &amp; Analytics:</strong> Meta Ads, Google Ads, Google Analytics, Looker Studio</div>
+          <div class="cv-tool-row"><strong>AI Tools:</strong> Claude, Claude Code, Claude CoWork, ChatGPT, Perplexity, DALL·E, Sora, Suno, Lovable</div>
+          <div class="cv-tool-row"><strong>Coding:</strong> Python (Intermediate), HTML &amp; CSS (Basic)</div>
+        </div>
+      </div>
+
+      <!-- AWARDS -->
+      <div class="cv-section">
+        <div class="cv-section-title">Awards &amp; Recognition</div>
+        <div class="cv-awards">
+          <span class="cv-award-pill">🏆 Premio Emprendedoras: Best STEAM Project (2025)</span>
+          <span class="cv-award-pill">🏆 Certamen Nacional Jóvenes Emprendedores (2024)</span>
+          <span class="cv-award-pill">🏆 Wayra Demo Day (2024)</span>
+          <span class="cv-award-pill">🏆 Mujer a Seguir – Digital Challenge (2023)</span>
+          <span class="cv-award-pill">Forbes – 23 ChangeMakers (2023)</span>
+          <span class="cv-award-pill">Nominee – Globant Awards: Best Tech Entrepreneur (2022)</span>
+          <span class="cv-award-pill">Nominee – Women Awards – Tech Divulgation (2024)</span>
+        </div>
+      </div>
+
+      <!-- MENTORSHIP -->
+      <div class="cv-section">
+        <div class="cv-section-title">Mentorship &amp; Start-Ups Community</div>
+        <div class="cv-competencies" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="cv-comp-item">Partner – Female Startup Leaders (2024–Present)</div>
+          <div class="cv-comp-item">Mentor – Madrid In Game Accelerator (2023–Present)</div>
+          <div class="cv-comp-item">Mentor – STEM Talent Girl (2022–Present)</div>
+        </div>
+      </div>
+
+      <!-- ACCELERATION -->
+      <div class="cv-section">
+        <div class="cv-section-title">Acceleration Programs</div>
+        <div class="cv-awards">
+          <span class="cv-award-pill">SekLab (2024)</span>
+          <span class="cv-award-pill">Wayra Telefónica (2024)</span>
+          <span class="cv-award-pill">La Nave (2023)</span>
+          <span class="cv-award-pill">Lanzadera (2022–2023)</span>
+        </div>
+      </div>
+
+      <!-- PUBLIC SPEAKING -->
+      <div class="cv-section">
+        <div class="cv-section-title">Public Speaking &amp; Media</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;">Speaker (among others)</div>
+            <ul class="cv-bullets">
+              <li>Pérez &amp; Llorca – New Entrepreneurs Law</li>
+              <li>Qonto – Startup Funding Experience</li>
+              <li>999 Plaza Radio – Startup Funding &amp; Growth</li>
+              <li>Barcelona Women Acceleration Week</li>
+              <li>3er Encuentro Educativo: Llévate el Éxito</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;">Media (Organic)</div>
+            <p style="font-size:12px;color:var(--text2);font-weight:300;">Forbes, El País, El Mundo, El Economista, ELLE...</p>
+            <p style="font-size:12px;color:var(--text2);margin-top:8px;font-weight:300;">Summary: <a href="https://bit.ly/esthereliasmedia" target="_blank" style="color:var(--accent);">bit.ly/esthereliasmedia</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="cv-section">
+        <div class="cv-section-title">Languages</div>
+        <div class="cv-langs">
+          <div class="cv-lang"><strong>Spanish</strong> — Native</div>
+          <div class="cv-lang"><strong>English</strong> — Advanced (C1/C2)</div>
+        </div>
+      </div>
+
+        </div>
+    <div class="cv-modal-footer">
+      <a href="https://www.linkedin.com/in/esthereliasalonso/" target="_blank" class="cv-dl-btn" style="background:var(--bg2);color:var(--text);">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/esther-elialo/gtm-engineering-portfolio" target="_blank" class="cv-dl-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        GitHub Portfolio
+      </a>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function openCV(e) { e && e.preventDefault(); document.getElementById('cvModal').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeCV() { document.getElementById('cvModal').classList.remove('open'); document.body.style.overflow=''; }
+  function closeCVOnOverlay(e) { if(e.target === document.getElementById('cvModal')) closeCV(); }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeCV(); });
+
+  // Scroll reveal for project rows
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.proj-row').forEach(r => obs.observe(r));
+
+  // Count-up — fire directly on load after short delay (no observer needed)
+  function countUp(el) {
+    const target = parseInt(el.dataset.count);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if (isNaN(target)) return;
+    let val = 0; const dur = 1400, step = 16, inc = target / (dur / step);
+    const t = setInterval(() => {
+      val += inc;
+      if (val >= target) { el.textContent = prefix + target + suffix; clearInterval(t); }
+      else el.textContent = prefix + Math.floor(val) + suffix;
+    }, step);
+  }
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('[data-count]').forEach(countUp);
+    }, 600);
+  });
+</script>
+</body>
+</html>
