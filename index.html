@@ -181,6 +181,64 @@
 
     @media(max-width: 600px) { .proj-row { grid-template-columns: 1fr; } .proj-index { display: none; } }
 
+    /* MOBILE */
+    @media(max-width: 680px) {
+      /* Nav */
+      nav { padding: 0 20px; }
+      .nav-logo { font-size: 16px !important; white-space: nowrap; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 12px; }
+      .nav-cta { font-size: 12px; padding: 6px 12px; }
+
+      /* Hero */
+      .hero { padding: 52px 20px 0; }
+      .hero-eyebrow {
+        font-size: 11px;
+        padding: 5px 12px;
+        max-width: 90vw;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.4;
+        margin-top: 32px;
+      }
+      .hero-title {
+        font-size: clamp(34px, 9.5vw, 52px) !important;
+        letter-spacing: -0.03em;
+      }
+      .hero-subtitle { font-size: 15px; }
+      .hero-actions { gap: 10px; }
+      .btn-apple-primary, .btn-apple-secondary { font-size: 14px; padding: 12px 20px; }
+
+      /* Stats */
+      .stats-strip { grid-template-columns: 1fr; max-width: 100%; }
+      .stat-cell { padding: 20px; }
+      .stat-big { font-size: 36px; }
+
+      /* Sections */
+      .section-wrap { padding: 72px 20px; }
+      .section-heading { font-size: clamp(26px, 7vw, 40px); }
+
+      /* Stack pills */
+      .stack-pills { gap: 8px; }
+      .stack-pill { font-size: 13px; padding: 10px 14px; }
+
+      /* CV modal */
+      .cv-modal { max-height: 95vh; border-radius: var(--radius-sm); }
+      .cv-modal-body { padding: 20px 20px; }
+      .cv-competencies { grid-template-columns: 1fr !important; }
+      .cv-tools-grid { grid-template-columns: 1fr; }
+      .cv-modal-header { padding: 16px 20px; }
+      div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+
+      /* Contact */
+      .contact-section { padding: 72px 20px; }
+      .contact-btns { flex-direction: column; align-items: center; }
+
+      /* Footer */
+      footer { padding: 20px; flex-direction: column; text-align: center; gap: 6px; }
+    }
+
     /* STACK */
     .stack-pills { display: flex; flex-wrap: wrap; gap: 12px; }
     .stack-pill {
