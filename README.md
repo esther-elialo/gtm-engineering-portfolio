@@ -1,6 +1,6 @@
 # GTM Engineering Portfolio — Esther Elías
 
-Sales Manager, Senior Account Executive, GTM Specialist — and now GTM Engineer. I build the AI agents that supercharge and multiply what my team and I can do.
+Sales Manager, Senior Account Executive, GTM Specialist — and now GTM Engineer. I build the AI agents that supercharge and multiply what my team and I can do, related with Sales, Partnerships, Revenue, Growth.
 
 ## Projects
 
@@ -87,6 +87,19 @@ AI agent that runs every morning, scores prospects against your ICP, searches fo
 - **Value:** Wakes up before you do. New qualified prospects in your pipeline every morning without manual research
 
 → [View project](./prospect-agent)
+
+---
+
+### 8. Lead Scoring Pipeline
+
+Real-time lead scoring automation built in n8n. When a new contact enters HubSpot, Claude scores them against ICP criteria and automatically routes them — qualified leads get updated in the CRM, discarded leads are logged to Google Sheets for full pipeline visibility.
+
+- **Input:** Webhook payload (contact data from HubSpot or any source)
+- **Output:** HubSpot update (score ≥ 7) OR Google Sheets row (score < 7)
+- **Stack:** n8n Cloud · Anthropic Claude Haiku 4.5 · HubSpot CRM API · Google Sheets
+- **Value:** No manual triage. Every lead scored, routed and logged automatically — 24/7
+
+→ [View project](./lead-scoring-pipeline)
 
 ---
 
