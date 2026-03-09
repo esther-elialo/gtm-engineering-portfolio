@@ -181,63 +181,6 @@
 
     @media(max-width: 600px) { .proj-row { grid-template-columns: 1fr; } .proj-index { display: none; } }
 
-    /* MOBILE */
-    @media(max-width: 680px) {
-      /* Nav */
-      nav { padding: 0 20px; }
-      .nav-logo { font-size: 16px !important; white-space: nowrap; }
-      .nav-links { gap: 18px; }
-      .nav-links a { font-size: 12px; }
-      .nav-cta { font-size: 12px; padding: 6px 12px; }
-
-      /* Hero */
-      .hero { padding: 52px 20px 0; }
-      .hero-eyebrow {
-        font-size: 11px;
-        padding: 5px 12px;
-        max-width: 90vw;
-        text-align: center;
-        white-space: normal;
-        line-height: 1.4;
-        margin-top: 32px;
-      }
-      .hero-title {
-        font-size: clamp(34px, 9.5vw, 52px) !important;
-        letter-spacing: -0.03em;
-      }
-      .hero-subtitle { font-size: 15px; }
-      .hero-actions { gap: 10px; }
-      .btn-apple-primary, .btn-apple-secondary { font-size: 14px; padding: 12px 20px; }
-
-      /* Stats */
-      .stats-strip { grid-template-columns: 1fr; max-width: 100%; }
-      .stat-cell { padding: 20px; }
-      .stat-big { font-size: 36px; }
-
-      /* Sections */
-      .section-wrap { padding: 72px 20px; }
-      .section-heading { font-size: clamp(26px, 7vw, 40px); }
-
-      /* Stack pills */
-      .stack-pills { gap: 8px; }
-      .stack-pill { font-size: 13px; padding: 10px 14px; }
-
-      /* CV modal */
-      .cv-modal { max-height: 95vh; border-radius: var(--radius-sm); }
-      .cv-modal-body { padding: 20px 20px; }
-      .cv-competencies { grid-template-columns: 1fr !important; }
-      .cv-tools-grid { grid-template-columns: 1fr; }
-      .cv-modal-header { padding: 16px 20px; }
-      div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr !important; }
-      div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
-
-      /* Contact */
-      .contact-section { padding: 72px 20px; }
-      .contact-btns { flex-direction: column; align-items: center; }
-
-      /* Footer */
-      footer { padding: 20px; flex-direction: column; text-align: center; gap: 6px; }
-    }
 
     /* STACK */
     .stack-pills { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -376,6 +319,78 @@
     }
     .cv-dl-btn:hover { background: var(--accent-h); }
     ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:#f5f5f7} ::-webkit-scrollbar-thumb{background:#c7c7cc;border-radius:3px}
+
+    /* ── MOBILE ─────────────────────────────── */
+    @media (max-width: 700px) {
+
+      /* Fix overflow root cause */
+      html, body { overflow-x: hidden; width: 100%; }
+      * { max-width: 100%; }
+
+      /* Nav — hide links, keep logo + CTA */
+      nav { padding: 0 16px; height: 48px; }
+      .nav-logo { font-size: 15px !important; font-weight: 700 !important; white-space: nowrap; }
+      .nav-links { display: none; }
+      .nav-cta { font-size: 12px; padding: 6px 14px; }
+
+      /* Hero */
+      .hero { padding: 48px 16px 0; }
+      .hero-inner { width: 100%; }
+      .hero-eyebrow {
+        font-size: 11px; padding: 5px 12px; margin-top: 20px; margin-bottom: 16px;
+        max-width: calc(100vw - 32px); white-space: normal; line-height: 1.5; text-align: center;
+      }
+      .hero-title {
+        font-size: clamp(32px, 8vw, 48px) !important;
+        letter-spacing: -0.03em; line-height: 1.08;
+      }
+      .hero-subtitle { font-size: 14px; padding: 0 4px; }
+      .hero-actions { flex-direction: column; align-items: center; gap: 8px; margin-bottom: 48px; }
+      .btn-apple-primary, .btn-apple-secondary { width: 100%; max-width: 280px; justify-content: center; font-size: 14px; padding: 13px 20px; }
+
+      /* Stats — vertical stack */
+      .stats-strip { grid-template-columns: 1fr; max-width: 100%; }
+      .stat-cell { padding: 18px 20px; }
+      .stat-big { font-size: 40px; }
+
+      /* Sections */
+      .section-wrap { padding: 64px 16px; }
+      .section-inner { width: 100%; }
+      .section-heading { font-size: clamp(24px, 7vw, 36px); }
+      .section-sub { font-size: 15px; }
+
+      /* Projects */
+      .proj-row { padding: 20px 16px; grid-template-columns: 1fr auto; gap: 12px; }
+      .proj-index { display: none; }
+      .proj-name { font-size: 15px; }
+      .proj-tagline { font-size: 13px; }
+
+      /* Stack pills */
+      .stack-pills { gap: 8px; }
+      .stack-pill { font-size: 13px; padding: 10px 14px; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+
+      /* Contact */
+      .contact-section { padding: 72px 20px; }
+      .contact-btns { flex-direction: column; align-items: center; gap: 10px; }
+      .btn-white, .btn-ghost { width: 100%; max-width: 280px; justify-content: center; }
+
+      /* Footer */
+      footer { padding: 20px 16px; flex-direction: column; text-align: center; gap: 6px; }
+
+      /* CV Modal */
+      .cv-modal-overlay { padding: 0; align-items: flex-end; }
+      .cv-modal { max-height: 92vh; border-radius: var(--radius) var(--radius) 0 0; }
+      .cv-modal-body { padding: 20px 16px; }
+      .cv-modal-header { padding: 16px 16px; }
+      .cv-modal-footer { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+      .cv-competencies { grid-template-columns: 1fr !important; }
+      .cv-tools-grid { grid-template-columns: 1fr !important; }
+      .cv-name { font-size: 24px; }
+    }
+
   </style>
 </head>
 <body>
